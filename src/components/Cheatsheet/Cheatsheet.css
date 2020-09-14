@@ -1,0 +1,33 @@
+.instructions {
+  display: flex;
+  flex-direction: column;
+}
+.scoringGuide {
+  text-align: center;
+}
+.instructions p {
+  margin: 1rem 2rem;
+}
+.instructions span {
+  display: inline-block;
+  width: 40px;
+  height: 60px;
+  overflow: hidden;
+  background: white;
+  border-radius: 5px;
+  margin: 1rem 1rem 0;
+}
+.instructions span img {
+  width: 100%;
+  height: auto;
+}
+.instructions table {
+  margin: 0 auto;
+  text-align: center;
+}
+.instructions img {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  margin: 1rem;
+}

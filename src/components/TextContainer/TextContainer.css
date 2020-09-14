@@ -1,0 +1,42 @@
+.textContainer {
+  color: white;
+  margin-top: 1rem;
+}
+
+.textContainer h3 {
+  margin: 0;
+}
+
+.activeContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.activeItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+}
+
+.activeContainer img {
+  padding-left: 10px;
+}
+
+.textContainer h1 {
+  margin-bottom: 0px;
+}
+
+#canvas {
+  background: #ffffff;
+}
+
+.greenDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  padding: 3px;
+  margin: 0 0.5rem;
+  background: #29ff8b;
+}
