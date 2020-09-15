@@ -192,6 +192,7 @@
 .item.hidden {
   opacity: 0;
   pointer-events: none;
+  position: absolute;
 }
 
 .item.poop img {
