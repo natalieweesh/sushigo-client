@@ -218,10 +218,12 @@
 .player-space p {
   padding-top: 3rem;
   margin-right: -200%;
+  pointer-events: none;
 }
 
 .game-over .player-space {
   opacity: 0;
+  pointer-events: none;
 }
 
 .second-row {
@@ -231,8 +233,7 @@
 
 .revealAll .item  {
   background: white!important;
-  box-shadow: 4px 4px 0 #5f4879!important;
-  border: 1px solid lightgray!important;
+  box-shadow: 0px 0px 8px #edffed;
 }
 .revealAll .item img {
   display: block!important;
@@ -294,21 +295,29 @@
   position: absolute;
   top: 0;
   right: 0;
+  font-size: 1.3rem;
   width: 360px;
-  height: 700px;
+  height: 862px;
   color: white;
   text-align: center;
   padding-top: 40px;
 }
 
+.rightTopSquare div {
+  text-align: right;
+}
+
+.rightTopSquare .bold {
+  font-size: 1.6rem;
+}
+
 .finishedContainer {
-  width: 980px;
+  width: 490px;
   background: #c0b1f8;
   position: absolute;
   height: 1080px;
-  top: 131px;
+  top: 129px;
   left: 50%;
-  margin-left: -490px;
 }
 
 .finishedContainer.height-4 {
@@ -332,6 +341,7 @@
 
 input[type=number] {
   font-size: 2rem;
+  text-align: center;
 }
 
 input[type=number]::-webkit-inner-spin-button {

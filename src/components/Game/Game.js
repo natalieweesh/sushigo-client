@@ -136,7 +136,7 @@ const Game = ({ location }) => {
           }
           // console.log('game pile index?', (user.orderIndex + game.currentRound) % game.userCount)
           game.piles[(user.orderIndex + game.currentRound) % game.userCount].map((c) => {
-            if (document.getElementById(c['id'])) {
+            if (c && document.getElementById(c['id'])) {
               if (user.answerSubmitted) {
                 document.getElementById(c['id']).className = 'item hidden';
               } else {
@@ -392,19 +392,27 @@ const Game = ({ location }) => {
       <div className="rightTopSquare instructions">
       {
         currentGame && currentGame.scores && currentGame.puddingCounts && <>
-          <p>🤗 Scoreboard! 🤗</p>
+          <p className="bold">🤗 Scoreboard! 🤗</p>
           {currentGame.scores.map((score, i) => {
             return <div><label>{users[i]['name']}: &nbsp;</label><input onChange={(e) => {
               // console.log('user', i, e.target.value);
               socket.emit('updateScore', {userId: i, score: e.target.value}, () => {})
             }} type="number" value={score}/></div>
           })}
-          <p>🍮 Pudding Tracker! 🍮</p>
+          <p className="bold">🍮 Pudding Tracker! 🍮</p>
           {currentGame.puddingCounts.map((puddingCount, i) => {
             return <div><label>{users[i]['name']}: &nbsp;</label><input onChange={(e) => {
               socket.emit('updatePuddingCount', {userId: i, puddingCount: e.target.value}, () => {})
             }} type="number" value={puddingCount}/></div>
           })}
+          <br/><br/>
+          <p className="bold">💸 Scoring Quick Guide: 💸</p>
+          <p><strong>🍙 Maki Rolls:</strong><br/>Most: 6 points<br/>Second most: 3 points</p>
+          <p><strong>🍤 Tempura:</strong><br/>Set of 2: 5 points</p>
+          <p><strong>🐟 Sashimi:</strong><br/>Set of 3: 10 points</p>
+          <p><strong>🥟 Dumplings:</strong><br/>Set of 1: 1 point<br/>Set of 2: 3 points<br/>Set of 3: 6 points<br/>Set of 4: 10 points<br/>Set of 5+: 15 points</p>
+          <p><strong>🍣 Nigiri:</strong><br/>Squid: 3 points<br/>Salmon: 2 points<br/>Egg: 1 point<br/>With a wasabi: nigiri score x 3</p>
+          <p><strong>🍮 Pudding:</strong><br/>at the end of 3 rounds:<br/>Most: 6 points<br/>Least: -6 points</p>
         </>
       }
       </div>
